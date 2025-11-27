@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <!-- Favicons (O Vite busca estes arquivos automaticamente na pasta public) -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Organize seus vídeos favoritos do YouTube em categorias personalizadas. Gratuito, open source e 100% local." />
+    <meta name="keywords" content="youtube, organizador, categorias, vídeos, playlist, gerenciador" />
+    <meta name="author" content="YouTube Organizer" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="YouTube Organizer" />
+    <meta property="og:description" content="Organize seus vídeos favoritos do YouTube em categorias personalizadas" />
+    <meta property="og:type" content="website" />
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#3b82f6" />
+    
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <title>YouTube Organizer - Organize seus vídeos favoritos</title>
+  </head>
+  <body>
+    <!-- O React vai injetar o aplicativo dentro desta div -->
+    <div id="root"></div>
+    
+    <!-- O VITE PRECISA DESTA LINHA PARA FUNCIONAR -->
+    <!-- Ele procura a pasta 'src' na mesma pasta onde este index.html está -->
+    <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- Fallback para navegadores sem JavaScript -->
+    <noscript>
+      <div style="padding: 2rem; text-align: center; font-family: system-ui, sans-serif;">
+        <h1>⚠️ JavaScript Necessário</h1>
+        <p>Esta aplicação requer JavaScript para funcionar.</p>
+        <p>Por favor, habilite o JavaScript no seu navegador.</p>
+      </div>
+    </noscript>
+  </body>
+</html>

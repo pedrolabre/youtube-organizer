@@ -1,0 +1,230 @@
+/* Importa Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===========================================
+   BASE STYLES
+   =========================================== */
+
+@layer base {
+  /* Configura fonte e transições suaves */
+  body {
+    @apply transition-colors duration-200;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Scrollbar customizado */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100 dark:bg-gray-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 dark:bg-gray-700 rounded-lg;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400 dark:bg-gray-600;
+  }
+
+  /* Remove outline padrão e adiciona focus ring consistente */
+  * {
+    @apply focus:outline-none;
+  }
+}
+
+/* ===========================================
+   COMPONENTS
+   =========================================== */
+
+@layer components {
+  /* Botões */
+  .btn-primary {
+    @apply px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 
+           transition-colors font-medium focus:ring-2 focus:ring-blue-500 
+           focus:ring-offset-2 dark:focus:ring-offset-gray-900;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 
+           transition-colors font-medium dark:bg-gray-700 dark:text-gray-200 
+           dark:hover:bg-gray-600 focus:ring-2 focus:ring-gray-500 
+           focus:ring-offset-2 dark:focus:ring-offset-gray-900;
+  }
+
+  .btn-sm {
+    @apply px-3 py-1.5 text-sm;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-xl shadow-card hover:shadow-card-hover 
+           transition-shadow p-4 border border-gray-200 dark:border-gray-700;
+  }
+
+  /* Inputs */
+  .input {
+    @apply w-full px-4 py-2 border border-gray-300 dark:border-gray-600 
+           rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100
+           focus:ring-2 focus:ring-blue-500 focus:border-transparent 
+           transition-colors placeholder:text-gray-400 dark:placeholder:text-gray-500;
+  }
+}
+
+/* ===========================================
+   UTILITIES
+   =========================================== */
+
+@layer utilities {
+  /* Truncate text com line-clamp */
+  .line-clamp-1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Hide scrollbar mas mantém funcionalidade */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ===========================================
+   ANIMATIONS
+   =========================================== */
+
+/* Fade in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-in;
+}
+
+/* Slide up */
+@keyframes slideUp {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+/* Scale in */
+@keyframes scaleIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.2s ease-out;
+}
+
+/* Spin (para loading) */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* ===========================================
+   DARK MODE FIXES
+   =========================================== */
+
+.dark {
+  color-scheme: dark;
+}
+
+/* ===========================================
+   ACESSIBILIDADE
+   =========================================== */
+
+/* Screen reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Focus visible (apenas teclado) */
+.focus-visible:focus {
+  @apply ring-2 ring-blue-500 ring-offset-2 dark:ring-offset-gray-900;
+}
+
+/* ===========================================
+   LOADING SKELETON (OPCIONAL)
+   =========================================== */
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.skeleton {
+  @apply animate-pulse bg-gray-200 dark:bg-gray-700 rounded;
+}
