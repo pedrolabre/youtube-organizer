@@ -49,7 +49,7 @@ npm run dev
 
 A aplicação abrirá em http://localhost:4000
 
-3. Configurar API Key
+### 3. Configurar API Key
 Abra a aplicação
 
 Clique no ícone de Configurações (⚙️) no canto superior direito
@@ -58,46 +58,46 @@ Cole sua API Key na aba "API Key"
 
 Pronto! O sistema já pode buscar dados dos vídeos.
 
-📖 Como Funciona
-Adicionar Vídeos
+## 📖 Como Funciona
+### Adicionar Vídeos
 Basta colar o link no botão "Adicionar Vídeo" (aceita links curtos youtu.be ou longos). O sistema preenche automaticamente:
 
-Título e Canal
+- Título e Canal
 
-Thumbnail em alta resolução
+- Thumbnail em alta resolução
 
-Estatísticas (Views) e Duração
+- Estatísticas (Views) e Duração
 
-Organização Avançada
-Mover/Copiar: Use o menu do vídeo ou selecione vários para mover entre categorias.
+### Organização Avançada
+- **Mover/Copiar:** Use o menu do vídeo ou selecione vários para mover entre categorias.
 
-Favoritos: Clique no ❤️ no card do vídeo para adicioná-lo à lista de Favoritos.
+- **Favoritos:** Clique no ❤️ no card do vídeo para adicioná-lo à lista de Favoritos.
 
-Status: Marque como "Visto" clicando no ícone de olho ou no botão de status.
+- **Status:** Marque como "Visto" clicando no ícone de olho ou no botão de status.
 
-Backup e Dados
+### Backup e Dados
 Vá em Configurações > Dados para:
 
-Exportar Tudo: Gera um arquivo .json com todo o seu banco de dados.
+- **Exportar Tudo:** Gera um arquivo .json com todo o seu banco de dados.
 
-Importar: Restaura seus dados (com opção de mesclar com os atuais ou substituir).
+- **Importar:** Restaura seus dados (com opção de mesclar com os atuais ou substituir).
 
-🛠 Stack Tecnológica
+## 🛠 Stack Tecnológica
 O projeto foi construído utilizando conceitos modernos de React e arquitetura limpa:
 
-React 18 - Biblioteca UI com Hooks personalizados
+**React 18 -** Biblioteca UI com Hooks personalizados
 
-Vite - Build tool ultrarrápida
+**Vite -** Build tool ultrarrápida
 
-Tailwind CSS - Estilização responsiva e Dark Mode
+**Tailwind CSS -** Estilização responsiva e Dark Mode
 
-Lucide React - Ícones vetoriais leves
+**Lucide React -** Ícones vetoriais leves
 
-Context API - Gerenciamento de estado global (App, Theme, Toast)
+**Context API -** Gerenciamento de estado global (App, Theme, Toast)
 
-Custom Hooks - Lógica encapsulada (useVideos, useYouTubeAPI, useLocalStorage)
+**Custom Hooks -** Lógica encapsulada (useVideos, useYouTubeAPI, useLocalStorage)
 
-📁 Estrutura do Projeto
+## 📁 Estrutura do Projeto
 A estrutura segue uma organização por domínios/funcionalidades:
 ```Bash
 youtube-organizer/
@@ -190,7 +190,7 @@ src/
     └── viewsFormatter.js         # Formatador numérico (1K, 1M)
 ```
 
-🔧 Scripts Disponíveis
+## 🔧 Scripts Disponíveis
 ```Bash
 # Desenvolvimento
 npm run dev
@@ -205,14 +205,14 @@ npm run preview
 npm run deploy
 ```
 
-📝 Limites da API
+## 📝 Limites da API
 A YouTube Data API (free tier) oferece uma cota generosa de 10.000 unidades/dia.
 
 Adicionar 1 vídeo consome aproximadamente 1 unidade.
 
 Isso permite gerenciar milhares de vídeos diariamente sem custos.
 
-🤝 Contribuindo
+## 🤝 Contribuindo
 Contribuições são bem-vindas!
 
 Faça um Fork do projeto
@@ -225,7 +225,7 @@ Faça o Push (git push origin feature/NovaFeature)
 
 Abra um Pull Request
 
-📄 Licença
+## 📄 Licença
 Este projeto está sob a licença MIT.
 
 Feito com ❤️ para organizar seus vídeos favoritos!
