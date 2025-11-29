@@ -4,21 +4,26 @@
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
+![React](https://img.shields.io/badge/React-18-blue)
+![Vite](https://img.shields.io/badge/Vite-5.0-purple)
 
 ## ✨ Features
 
-- 📁 **Categorias Ilimitadas** - Crie quantas categorias quiser
-- 🎬 **Informações Automáticas** - Busca título, thumbnail, views, duração via YouTube API
-- 🔍 **Busca e Filtros** - Encontre vídeos rapidamente por título ou canal
-- ✅ **Marcar como Visto** - Acompanhe o que já assistiu
-- 📤 **Export/Import** - Faça backup dos seus dados
-- 🌓 **Tema Claro/Escuro** - Escolha sua preferência
-- 💾 **100% Local** - Seus dados, seu controle (LocalStorage)
-- 🆓 **Totalmente Gratuito** - Sem servidor, sem custos
+- 📁 **Categorias Ilimitadas** - Crie e gerencie quantas categorias quiser
+- 🎬 **Metadados Automáticos** - Busca título, canal, thumbnail, views e duração via YouTube API
+- ❤️ **Favoritos** - Marque vídeos especiais para acesso rápido em uma aba dedicada
+- 👁️ **Controle de Visualização** - Filtre rapidamente por vídeos **Assistidos** e **Para Assistir**
+- ⚡ **Ações em Massa** - Selecione múltiplos vídeos para Mover, Copiar ou Excluir de uma vez
+- 🔍 **Busca e Ordenação** - Encontre vídeos por título/canal e ordene por data, views ou duração
+- 📤 **Export/Import** - Faça backup completo ou de categorias específicas (JSON)
+- 🌓 **Tema Claro/Escuro** - Interface adaptável à sua preferência
+- 💾 **100% Local** - Seus dados ficam apenas no seu navegador (LocalStorage)
 
 ## 🚀 Como Usar
 
 ### 1. Obter API Key do YouTube
+
+Para que o aplicativo busque os dados dos vídeos, você precisa de uma chave gratuita:
 
 1. Acesse [Google Cloud Console](https://console.cloud.google.com/)
 2. Crie um novo projeto
@@ -30,7 +35,7 @@
 
 ```bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/youtube-organizer.git
+git clone [https://github.com/seu-usuario/youtube-organizer.git](https://github.com/seu-usuario/youtube-organizer.git)
 
 # Entre na pasta
 cd youtube-organizer
@@ -40,142 +45,116 @@ npm install
 
 # Rode em desenvolvimento
 npm run dev
-```
 
-A aplicação abrirá em `http://localhost:3000`
+A aplicação abrirá em http://localhost:3000
 
-### 3. Configurar API Key
+3. Configurar API Key
+Abra a aplicação
 
-1. Abra a aplicação
-2. Clique em **Configurações** (⚙️)
-3. Cole sua **API Key** do YouTube
-4. Pronto! Agora você pode adicionar vídeos
+Clique no ícone de Configurações (⚙️) no canto superior direito
 
-## 📖 Como Funciona
+Cole sua API Key na aba "API Key"
 
-### Adicionar Vídeos
+Pronto! O sistema já pode buscar dados dos vídeos.
 
-1. Cole o link do YouTube (formatos aceitos):
-   - `https://www.youtube.com/watch?v=VIDEO_ID`
-   - `https://youtu.be/VIDEO_ID`
-   - Ou apenas o `VIDEO_ID`
+📖 Como Funciona
+Adicionar Vídeos
+Basta colar o link no botão "Adicionar Vídeo" (aceita links curtos youtu.be ou longos). O sistema preenche automaticamente:
 
-2. A aplicação busca automaticamente:
-   - Título
-   - Canal
-   - Thumbnail
-   - Visualizações
-   - Duração
-   - Data de publicação
+Título e Canal
 
-### Organizar
+Thumbnail em alta resolução
 
-- **Categorias**: Crie quantas quiser (Tutoriais, Música, Receitas, etc.)
-- **Múltiplas categorias**: Um vídeo pode estar em várias categorias
-- **Busca**: Filtre por título ou canal
-- **Ordenação**: Por data, título, views, duração
+Estatísticas (Views) e Duração
 
-### Backup
+Organização Avançada
+Mover/Copiar: Use o menu do vídeo ou selecione vários para mover entre categorias.
 
-- **Exportar Tudo**: JSON com todos os dados
-- **Exportar Categoria**: JSON de uma categoria específica
-- **Importar**: Restaure seus dados a qualquer momento
+Favoritos: Clique no ❤️ no card do vídeo para adicioná-lo à lista de Favoritos.
 
-## 🛠 Stack Tecnológica
+Status: Marque como "Visto" clicando no ícone de olho ou no botão de status.
 
-- **React 18** - Biblioteca UI
-- **Vite** - Build tool
-- **Tailwind CSS** - Estilização
-- **Lucide React** - Ícones
-- **YouTube Data API v3** - Buscar informações
-- **LocalStorage** - Armazenamento local
+Backup e Dados
+Vá em Configurações > Dados para:
 
-## 📁 Estrutura do Projeto
+Exportar Tudo: Gera um arquivo .json com todo o seu banco de dados.
 
-```
+Importar: Restaura seus dados (com opção de mesclar com os atuais ou substituir).
+
+🛠 Stack Tecnológica
+O projeto foi construído utilizando conceitos modernos de React e arquitetura limpa:
+
+React 18 - Biblioteca UI com Hooks personalizados
+
+Vite - Build tool ultrarrápida
+
+Tailwind CSS - Estilização responsiva e Dark Mode
+
+Lucide React - Ícones vetoriais leves
+
+Context API - Gerenciamento de estado global (App, Theme, Toast)
+
+Custom Hooks - Lógica encapsulada (useVideos, useYouTubeAPI, useLocalStorage)
+
+📁 Estrutura do Projeto
+A estrutura segue uma organização por domínios/funcionalidades:
 youtube-organizer/
-├── public/
-│   ├── index.html
-│   └── favicon.ico
 ├── src/
-│   ├── components/      # Componentes React
-│   ├── hooks/           # Custom hooks
-│   ├── services/        # YouTube API, Storage
-│   ├── utils/           # Funções utilitárias
-│   ├── constants/       # Constantes
-│   ├── context/         # React Context
-│   ├── styles/          # CSS global
-│   ├── App.jsx          # Componente raiz
-│   └── main.jsx         # Entry point
-├── package.json
-├── vite.config.js
-├── tailwind.config.js
-└── README.md
-```
+│   ├── components/
+│   │   ├── Category/    # Cards, Listas e Ações de Categorias
+│   │   ├── Dashboard/   # Views principais (Home, Favoritos, Assistidos)
+│   │   ├── Layout/      # Header, Container
+│   │   ├── Modals/      # Modais de confirmação e formulários
+│   │   ├── Settings/    # Configurações, API Key, Import/Export
+│   │   ├── UI/          # Componentes base (Button, Input, Modal)
+│   │   └── Video/       # Cards de Vídeo e Ações
+│   ├── context/         # Estados Globais
+│   ├── hooks/           # Lógica reutilizável
+│   ├── services/        # Integração com API e Storage
+│   └── utils/           # Formatadores e Validadores
+└── ...
 
-## 🔧 Scripts Disponíveis
-
-```bash
+🔧 Scripts Disponíveis
 # Desenvolvimento
 npm run dev
 
 # Build para produção
 npm run build
 
-# Preview da build
+# Preview da build gerada
 npm run preview
 
 # Deploy no GitHub Pages
 npm run deploy
-```
 
-## 🌐 Deploy
+📝 Limites da API
+A YouTube Data API (free tier) oferece uma cota generosa de 10.000 unidades/dia.
 
-### GitHub Pages
+Adicionar 1 vídeo consome aproximadamente 1 unidade.
 
-1. No `vite.config.js`, altere:
-   ```js
-   base: '/nome-do-seu-repositorio/'
-   ```
+Isso permite gerenciar milhares de vídeos diariamente sem custos.
 
-2. Execute:
-   ```bash
-   npm run deploy
-   ```
+🤝 Contribuindo
+Contribuições são bem-vindas!
 
-3. Acesse: `https://seu-usuario.github.io/nome-do-repositorio`
+Faça um Fork do projeto
 
-### Netlify / Vercel
+Crie uma Branch para sua Feature (git checkout -b feature/NovaFeature)
 
-1. Conecte seu repositório
-2. Configure:
-   - **Build command**: `npm run build`
-   - **Output directory**: `dist`
-3. Deploy automático a cada commit!
+Faça o Commit (git commit -m 'Add: Nova Feature')
 
-## 📝 Limites da API
+Faça o Push (git push origin feature/NovaFeature)
 
-A YouTube Data API (free tier) tem limite de:
-- **10.000 requisições/dia**
-- Cada vídeo adicionado = 1 requisição
-- Suficiente para adicionar ~10.000 vídeos por dia
+Abra um Pull Request
 
-## 🤝 Contribuindo
+📄 Licença
+Este projeto está sob a licença MIT.
 
-Pull requests são bem-vindos! Para mudanças grandes, abra uma issue primeiro.
+Feito com ❤️ para organizar seus vídeos favoritos!
 
-## 📄 Licença
 
-[MIT](LICENSE)
+### O que mudou e por que (para seu aprendizado):
 
-## 🙏 Agradecimentos
-
-- [React](https://react.dev/)
-- [Vite](https://vitejs.dev/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Lucide Icons](https://lucide.dev/)
-- [YouTube Data API](https://developers.google.com/youtube/v3)
-
----
-
-**Feito com ❤️ para organizar seus vídeos favoritos!**
+1.  **Features:** Adicionei "Favoritos", "Ações em Massa" e "Controle de Visualização (Assistidos/Não Assistidos)" porque vi no seu código os componentes `FavoritesView.jsx`, `VideoBulkActions.jsx` e `WatchedView.jsx`. Isso valoriza muito o seu projeto, pois mostra que ele é mais completo do que um simples CRUD.
+2.  **Estrutura de Pastas:** Atualizei a árvore de diretórios. No README antigo estava genérica (`src/components`), mas no seu código final você organizou tudo muito bem em subpastas (`Category`, `Dashboard`, `Video`, etc.). Isso demonstra maturidade na organização do projeto React.
+3.  **Contexto Técnico:** Adicionei menção à `Context API` e `Custom Hooks` na seção de
