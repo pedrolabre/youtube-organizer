@@ -35,7 +35,7 @@ Para que o aplicativo busque os dados dos vídeos, você precisa de uma chave gr
 
 ```bash
 # Clone o repositório
-git clone [https://github.com/seu-usuario/youtube-organizer.git](https://github.com/seu-usuario/youtube-organizer.git)
+git clone https://github.com/seu-usuario/youtube-organizer.git
 
 # Entre na pasta
 cd youtube-organizer
@@ -45,6 +45,7 @@ npm install
 
 # Rode em desenvolvimento
 npm run dev
+```
 
 A aplicação abrirá em http://localhost:4000
 
@@ -98,6 +99,7 @@ Custom Hooks - Lógica encapsulada (useVideos, useYouTubeAPI, useLocalStorage)
 
 📁 Estrutura do Projeto
 A estrutura segue uma organização por domínios/funcionalidades:
+```Bash
 youtube-organizer/
 src/
 ├── main.jsx                  # Ponto de entrada (Entry Point)
@@ -186,9 +188,10 @@ src/
     ├── validators.js             # Regras de validação de formulário
     ├── videoParser.js            # Extrator de ID via Regex
     └── viewsFormatter.js         # Formatador numérico (1K, 1M)
-
+```
 
 🔧 Scripts Disponíveis
+```Bash
 # Desenvolvimento
 npm run dev
 
@@ -200,6 +203,7 @@ npm run preview
 
 # Deploy no GitHub Pages
 npm run deploy
+```
 
 📝 Limites da API
 A YouTube Data API (free tier) oferece uma cota generosa de 10.000 unidades/dia.
